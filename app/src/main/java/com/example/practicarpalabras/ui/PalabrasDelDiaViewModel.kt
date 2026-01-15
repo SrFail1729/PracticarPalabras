@@ -1,5 +1,7 @@
-package com.example.practicarpalabras.ui.palabras
+package com.example.practicarpalabras.ui
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModel
 import com.example.practicarpalabras.data.Palabra
 import com.example.practicarpalabras.data.Palabras
@@ -10,6 +12,7 @@ import kotlinx.coroutines.flow.update
 import java.time.LocalDate
 import kotlin.random.Random
 
+@RequiresApi(Build.VERSION_CODES.O)
 class PalabrasDelDiaViewModel: ViewModel() {
     private val _uiState = MutableStateFlow(PalabrasDelDiaUiState())
 
@@ -40,6 +43,7 @@ class PalabrasDelDiaViewModel: ViewModel() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun generarPalabraDelDia(){
         val palabras = Palabras.palabras
         val semillaDia = LocalDate.now().toEpochDay()

@@ -1,4 +1,4 @@
-    package com.example.practicarpalabras.ui.home
+package com.example.practicarpalabras.ui
 
     import android.widget.Toast
     import androidx.compose.foundation.background
@@ -19,29 +19,27 @@
     import androidx.compose.runtime.LaunchedEffect
     import androidx.compose.runtime.collectAsState
     import androidx.compose.runtime.getValue
-    import androidx.compose.runtime.mutableStateOf
-    import androidx.compose.runtime.remember
-    import androidx.compose.runtime.setValue
     import androidx.compose.ui.Alignment
     import androidx.compose.ui.Modifier
     import androidx.compose.ui.graphics.Color
     import androidx.compose.ui.platform.LocalContext
     import androidx.compose.ui.unit.dp
-    import androidx.lifecycle.viewmodel.*
     import androidx.lifecycle.viewmodel.compose.viewModel
-    import kotlin.coroutines.coroutineContext
 
-    @Composable
+@Composable
     fun InicioSesion(
 
+    loginExitoso: () -> Unit,
         viewModel: LoginViewModel = viewModel()
 
     ){
         val state by viewModel.uiState.collectAsState()
         val context = LocalContext.current
 
-        LaunchedEffect(state.mensaje) {
-            Toast.makeText(context,state.mensaje,Toast.LENGTH_SHORT).show()
+        LaunchedEffect(state.isExitoso) {
+            if (state.isExitoso){
+                loginExitoso()
+            }
         }
 
         Column(modifier = Modifier.fillMaxSize()
@@ -66,8 +64,8 @@
                modifier = Modifier.fillMaxWidth()
                    .padding(start = 25.dp, end = 25.dp),
                 colors = TextFieldDefaults.colors(
-                    focusedContainerColor = Color.LightGray,
-                    unfocusedContainerColor = Color.LightGray,
+                    focusedContainerColor = Color.White,
+                    unfocusedContainerColor = Color.White,
                     focusedIndicatorColor = Color.Blue,
                 ),
                 singleLine = true
@@ -84,8 +82,8 @@
                 modifier = Modifier.fillMaxWidth()
                     .padding(start = 25.dp, end = 25.dp),
                 colors = TextFieldDefaults.colors(
-                    focusedContainerColor = Color.LightGray,
-                    unfocusedContainerColor = Color.LightGray,
+                    focusedContainerColor = Color.White,
+                    unfocusedContainerColor = Color.White,
                     focusedIndicatorColor = Color.Blue,
                 ),
                 singleLine = true

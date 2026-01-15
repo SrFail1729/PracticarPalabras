@@ -1,4 +1,4 @@
-package com.example.practicarpalabras.ui.home
+package com.example.practicarpalabras.ui
 
 import androidx.lifecycle.ViewModel
 import com.example.practicarpalabras.data.GestorPrimitivo

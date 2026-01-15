@@ -1,4 +1,4 @@
-package com.example.practicarpalabras.ui.palabras
+package com.example.practicarpalabras.ui
 
 data class PalabrasDelDiaUiState (
     val palabra: String = "",

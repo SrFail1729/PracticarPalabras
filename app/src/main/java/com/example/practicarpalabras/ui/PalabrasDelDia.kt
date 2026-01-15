@@ -1,5 +1,7 @@
-package com.example.practicarpalabras.ui.palabras
+package com.example.practicarpalabras.ui
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,8 +22,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun pantallaPrincipal(
+fun PantallaPrincipal(
     viewModel: PalabrasDelDiaViewModel = viewModel()
 ){
     val state by viewModel.uiState.collectAsState()
@@ -32,7 +35,7 @@ fun pantallaPrincipal(
 
     Column(modifier = Modifier.fillMaxSize()
         .padding(5.dp)
-        .background(color = Color.LightGray),
+        .background(color = Color.White),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center) {
 

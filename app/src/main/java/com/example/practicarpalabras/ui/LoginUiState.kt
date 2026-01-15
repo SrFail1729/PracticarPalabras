@@ -1,4 +1,4 @@
-package com.example.practicarpalabras.ui.home
+package com.example.practicarpalabras.ui
 
 data class LoginUiState (
     val usuario: String = "",
