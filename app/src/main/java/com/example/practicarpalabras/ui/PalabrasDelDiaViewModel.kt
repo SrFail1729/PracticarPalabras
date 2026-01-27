@@ -43,7 +43,6 @@ class PalabrasDelDiaViewModel: ViewModel() {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun generarPalabraDelDia(){
         val palabras = Palabras.palabras
         val semillaDia = LocalDate.now().toEpochDay()
