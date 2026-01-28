@@ -12,6 +12,7 @@ import com.example.practicarpalabras.navigation.AppNavigaton
 import com.example.practicarpalabras.ui.InicioSesion
 import com.example.practicarpalabras.ui.PantallaPrincipal
 
+
 class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,3 +24,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
+@Preview
+@Composable
+fun GreetingPreview() {
+}

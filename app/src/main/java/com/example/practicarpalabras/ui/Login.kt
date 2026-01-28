@@ -43,14 +43,13 @@ package com.example.practicarpalabras.ui
         }
 
         Column(modifier = Modifier.fillMaxSize()
-            .padding(5.dp)
-            .background(color = Color.LightGray),
+            .padding(5.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center){
 
             Text(
                 text = "Inicio de sesión",
-                style = MaterialTheme.typography.titleMedium,
+                style = MaterialTheme.typography.titleLarge,
             )
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -64,8 +63,6 @@ package com.example.practicarpalabras.ui
                modifier = Modifier.fillMaxWidth()
                    .padding(start = 25.dp, end = 25.dp),
                 colors = TextFieldDefaults.colors(
-                    focusedContainerColor = Color.White,
-                    unfocusedContainerColor = Color.White,
                     focusedIndicatorColor = Color.Blue,
                 ),
                 singleLine = true
@@ -82,8 +79,6 @@ package com.example.practicarpalabras.ui
                 modifier = Modifier.fillMaxWidth()
                     .padding(start = 25.dp, end = 25.dp),
                 colors = TextFieldDefaults.colors(
-                    focusedContainerColor = Color.White,
-                    unfocusedContainerColor = Color.White,
                     focusedIndicatorColor = Color.Blue,
                 ),
                 singleLine = true

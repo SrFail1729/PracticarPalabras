@@ -42,10 +42,9 @@ fun PantallaPrincipal(
     }
     MenuLateralLayout(navController = navController) {
         onMenuAbierto ->
-
         Scaffold(
             topBar = {
-                TopBar("Pantalla principal"){}
+                TopBar("Pantalla principal", onMenuAbierto)
             }
         ) {
             //Padding proporcionado por el Scaffold

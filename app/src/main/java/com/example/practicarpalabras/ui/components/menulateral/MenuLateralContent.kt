@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -12,6 +13,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalDrawerSheet
@@ -40,7 +42,7 @@ fun Contenido(
             contentAlignment = Alignment.BottomStart,
 
         ){
-            Column() {
+            Column(modifier = Modifier.padding(16.dp)) {
                 Image(
                     painter = painterResource(id = R.drawable.vin),
                     contentDescription = null,
@@ -52,14 +54,16 @@ fun Contenido(
 
                 Spacer(modifier = Modifier.height(12.dp))
 
-                Text("Diccionario MistBorn",
-                    style = MaterialTheme.typography.headlineMedium,
-                    color = MaterialTheme.colorScheme.onPrimaryContainer
-                )
-
+                Row() {
+                    Text("Diccionario MistBorn",
+                        style = MaterialTheme.typography.headlineMedium,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer
+                    )
+                }
             }
+        }
 
-            Spacer(modifier = Modifier.height(12.dp))
+        Column(modifier = Modifier.padding(16.dp)) {
 
             NavigationDrawerItem(
                 label = {Text("Inicio")},
@@ -73,6 +77,21 @@ fun Contenido(
                 onClick = {},
                 modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding)
             )
+
+
+            NavigationDrawerItem(
+                label = {Text("Ajustes")},
+                selected = rutaActual == "Ajuste",
+                icon =  {
+                    Icon(
+                        Icons.Default.Settings,
+                        contentDescription = null
+                    )
+                },
+                onClick = {},
+                modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding)
+            )
+
         }
     }
 }
